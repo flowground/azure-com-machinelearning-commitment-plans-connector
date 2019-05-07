@@ -1,0 +1,53 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "commitmentPlanName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "The properties of a commitment plan which may be updated via PATCH.",
+            "properties": {
+                "sku": {
+                    "description": "The commitment plan SKU.",
+                    "properties": {
+                        "capacity": {
+                            "description": "The scale-out capacity of the resource. 1 is 1x, 2 is 2x, etc. This impacts the quantities and cost of any commitment plan resource.",
+                            "format": "int32",
+                            "type": "integer"
+                        },
+                        "name": {
+                            "description": "The SKU name. Along with tier, uniquely identifies the SKU.",
+                            "type": "string"
+                        },
+                        "tier": {
+                            "description": "The SKU tier. Along with name, uniquely identifies the SKU.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "tags": {
+                    "description": "User-defined tags for the commitment plan.",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

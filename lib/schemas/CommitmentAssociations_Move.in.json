@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "commitmentPlanName": {
+            "required": true,
+            "type": "string"
+        },
+        "commitmentAssociationName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Specifies the destination Azure ML commitment plan for a move operation.",
+            "properties": {
+                "destinationPlanId": {
+                    "description": "The ARM ID of the commitment plan to re-parent the commitment association to.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
